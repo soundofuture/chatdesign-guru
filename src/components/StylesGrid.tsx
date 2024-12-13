@@ -24,7 +24,11 @@ const styles = [
   },
 ];
 
-export const StylesGrid = () => {
+interface StylesGridProps {
+  onSelect: (style: string) => void;
+}
+
+export const StylesGrid = ({ onSelect }: StylesGridProps) => {
   return (
     <section className="py-20 px-4">
       <motion.div
@@ -33,9 +37,6 @@ export const StylesGrid = () => {
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          Choisissez votre <span className="gradient-text">style</span>
-        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {styles.map((style, index) => (
             <motion.div
@@ -43,6 +44,7 @@ export const StylesGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
+              onClick={() => onSelect(style.title)}
             >
               <StyleCard {...style} />
             </motion.div>

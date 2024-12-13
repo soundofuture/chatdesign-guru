@@ -33,6 +33,19 @@
   body {
     @apply bg-dark text-white;
     background: radial-gradient(circle at 50% 50%, #0063FF 0%, rgba(0, 99, 255, 0.2) 25%, rgba(0, 0, 0, 1) 50%);
+    animation: gradientAnimation 15s ease infinite;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -46,4 +59,9 @@
 
 .hover-glow {
   @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,99,255,0.3)];
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
 }
