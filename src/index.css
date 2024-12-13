@@ -32,6 +32,7 @@
   }
   body {
     @apply bg-dark text-white;
+    background: radial-gradient(circle at 50% 50%, #0063FF 0%, rgba(0, 99, 255, 0.2) 25%, rgba(0, 0, 0, 1) 50%);
   }
 }
 
